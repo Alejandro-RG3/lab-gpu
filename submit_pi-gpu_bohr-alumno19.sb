@@ -1,0 +1,14 @@
+#!/bin/bash
+#SBATCH --partition=bohr-gpu
+#SBATCH --chdir=/home/alumno19/lab-gpu
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=1
+#SBATCH -J pi-gpu
+
+module load anaconda/2025.06
+
+N=$1
+
+ipython pi-gpu-alumno19.ipynb $N
+
+module unload anaconda/2025.06
